@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cat Café Melbourne</title>
+  <link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <div class="logo">
+      <button>
+        <img src="catcafe02.png" alt="Cat Cafe Logo" />
+      </button>
+    </div>
+
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">ABOUT US</a></li>
+        <li><a href="#">BOOK YOUR VISIT</a></li>
+        <li><a href="#">DONATION</a></li>
+        <li><a href="#">FAQS</a></li>
+        <li><a href="#">CONTACT US</a></li>
+      </ul>
+    </nav>
+
+    <div class="search-container">
+      <input type="search" placeholder="Search..." />
+    </div>
+
+    <div class="cart-profile">
+      <a href="#"><img src="shoppingcart.png" alt="Cart Icon" /></a>
+      <a href="#"><img src="profile.png" alt="Profile Icon" /></a>
+    </div>
+
+    <div class="nav-menu-mobile">
+      <a href="#">HOME</a>
+      <a href="#">ABOUT US</a>
+      <a href="#">BOOK YOUR VISIT</a>
+      <a href="#">DONATION</a>
+      <a href="#">FAQS</a>
+      <a href="#">CONTACT US</a>
+      <div class="mobile-search-container">
+        <input type="search" placeholder="Search..." />
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <img src="WELCOME.png" alt="Welcome Banner" />
+  </section>
+
+  <section class="intro">
+    <h2>Melbourne & Australia’s First Cat Café</h2>
+    <p>
+      We offer a <strong>unique social experience</strong> where customers can <strong>play, pat and relax</strong> with our friendly cats. You can even have <strong>coffee and drinks</strong> while inside with the kitties!<br />
+      Our resident cats live at the premises and have everything they need right at their paw-tips.
+    </p>
+    <a class="cta-button" href="#">BOOK YOUR VISIT NOW</a>
+  </section>
+
+  <section class="passes">
+    <div class="pass" data-label="General Visit Pass">
+      <img src="Mackerel.png" alt="Cat 1" />
+      <p>Book a session so meet out friendly cats</p>
+    </div>
+    <div class="pass" data-label="Private Session">
+      <img src="Clyde.png" alt="Cat 2" />
+      <p>For group and special events up to 30 people</p>
+    </div>
+    <div class="pass" data-label="Value-Multi Pass">
+      <img src="Ruby.png" alt="Cat 3" />
+      <p>Specially crafted for those who visit us often</p>
+    </div>
+    <div class="pass" data-label="Digital Gift Voucher">
+      <img src="Hazel.png" alt="Cat 4" />
+      <p>Treat you family and friends with a visit to us</p>
+    </div>
+  </section>
+
+  <footer class="main-footer">
+    <div class="footer-info">
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Booking and Refund Policy</a>
+        <a href="#">Terms and Conditions</a>
+      </div>
+      <div class="footer-address">
+        <strong>Location and Opening Hours:</strong><br/>
+        512 Swanston St, Carlton 3053<br/>
+        Opening hours may vary. Check our calendar for available sessions and hours.<br/>
+        (We reserve the right to close early if there are no bookings or cats require medical care)
+      </div>
+      <div class="social-icons">
+        <a href="#"><img src="facebook.png" alt="Facebook" /></a>
+        <a href="#"><img src="instagram.png" alt="Instagram" /></a>
+        <a href="#"><img src="pinterest.png" alt="Pinterest" /></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const hamburger = document.querySelector(".hamburger");
+      const mobileMenu = document.querySelector(".nav-menu-mobile");
+
+      hamburger.addEventListener("click", function () {
+        mobileMenu.classList.toggle("active");
+      });
+    });
+  </script>
+
+</body>
+</html>
