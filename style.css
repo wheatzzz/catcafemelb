@@ -7,6 +7,7 @@ body {
   text-align: center;
 }
 
+
 .main-header {
   display: flex;
   justify-content: space-between;
@@ -17,6 +18,8 @@ body {
   position: relative;
   z-index: 10;
   flex-wrap: nowrap;
+  position: sticky;
+  top: 0;
 }
 
 .logo {
@@ -108,7 +111,9 @@ body {
 .cart-profile img {
   width: 28px;
   height: 28px;
+  
 }
+
 
 /* Hamburger menu */
 .hamburger {
@@ -185,21 +190,46 @@ body {
   padding: 40px 20px;
 }
 
+.intro strong {
+  color: #027D42
+}
+
 .intro h2 {
   color: #8C4F2F;
   font-size: 26px;
   margin-bottom: 15px;
   font-family: 'Roboto Slab', serif;
   font-weight: 700;
+  text-decoration: underline
+}
+
+.introService h2 {
+  color:#027D42;
+  font-size: 26px;
+  margin-bottom: 15px;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  text-decoration: underline
+}
+
+.introService p {
+   font-size: 14px;
+  line-height: 1.6;
+  max-width: 1000px;
+  margin: 0 auto 30px;
+  font-family: 'Roboto', sans-serif;
+  padding: 0 10px;
 }
 
 .intro p {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.6;
   max-width: 700px;
   margin: 0 auto 30px;
   font-family: 'Roboto', sans-serif;
 }
+
+
 
 .cta-button {
   background-color: #027D42;
