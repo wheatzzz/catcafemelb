@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cat Café Booking</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="main-header">
+    <div class="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <div class="logo">
+  <a href="homepage.html">
+    <button>
+      <img src="Header/catcafe02.png" alt="Cat Cafe Logo" />
+    </button>
+  </a>
+</div>
+
+
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="homepage.html">HOME</a></li>
+        <li><a href="services.html">ABOUT US</a></li>
+        <li><a href="#">BOOK YOUR VISIT</a></li>
+        <li><a href="#">DONATION</a></li>
+        <li><a href="#">FAQS</a></li>
+        <li><a href="#">CONTACT US</a></li>
+      </ul>
+    </nav>
+
+    <div class="search-container">
+      <input type="search" placeholder="Search..." />
+    </div>
+
+    <div class="cart-profile">
+      <a href="#"><img src="header/shoppingcart.png" alt="Cart Icon" /></a>
+      <a href="#"><img src="Header/profile.png" alt="Profile Icon" /></a>
+    </div>
+
+    <div class="nav-menu-mobile">
+      <a href="homepage.html">HOME</a>
+      <a href="services.html">ABOUT US</a>
+      <a href="#">BOOK YOUR VISIT</a>
+      <a href="#">DONATION</a>
+      <a href="#">FAQS</a>
+      <a href="#">CONTACT US</a>
+      <div class="mobile-search-container">
+        <input type="search" placeholder="Search..." />
+      </div>
+    </div>
+  </header>
+
+   <div class="main-columns">
+  <div class="left-column">
+    <!-- Placeholder for images -->
+    <div class="booking-image">
+        <img src="Booking/BookYourVisit2.png" alt="Book_your_Visit" />
+        <img src="Booking/product_entry_info.png" alt="product_entry_info" />
+    </div>
+  </div>
+
+  <div class="right-column">
+      <h2>Book a General Visit at Cat Café</h2>
+      <p>Times are in Australia/Melbourne</p>
+    <!-- Calendar container -->
+    <div class="calendar">
+      <table>
+        <thead>
+          <tr>
+            <th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th><th>S</th>
+          </tr>
+        </thead>
+        <tbody id="calendar-body">
+          <!-- Calendar days inserted by JavaScript -->
+        </tbody>
+      </table>
+      <p>Choose a date above to see avaliable times</p>
+    </div>
+
+     <div class="legend">
+      <span class="key available"></span> Available
+      <span class="key unavailable"></span> Unavailable
+      <span class="key selected"></span> Selected
+    </div>
+ 
+
+    <div class="timeslots" id="timeslot-container">
+      <!-- Timeslots generated after date selection -->
+    </div>
+    
+    <div class="booking-container">
+  <div class="booking-pass">
+    <div class="title-price">
+      <span class="title">1h Pass + Hot Coffee/Chocolate or Hot Tea</span>
+      <span class="price">$24.50 per person</span>
+    </div>
+    <div class="pass-row">
+      <input type="number" min="0" placeholder="0" class="quantity-input" />
+      <span class="extra-info">Cat treats can be ordered separately</span>
+    </div>
+  </div>
+
+  <div class="booking-pass">
+    <div class="title-price">
+      <span class="title">1h Pass + Complimentary Drink</span>
+      <span class="price">$22 per person</span>
+    </div>
+    <div class="pass-row">
+      <input type="number" min="0" placeholder="0" class="quantity-input" />
+      <span class="extra-info">One soft drink/water or swap to one cat treat</span>
+    </div>
+  </div>
+
+  <div class="booking-pass">
+    <div class="title-price">
+      <span class="title">1h Pass Entry Only</span>
+      <span class="price">$19 per person</span>
+    </div>
+    <div class="pass-row">
+      <input type="number" min="0" placeholder="0" class="quantity-input" />
+      <span class="extra-info">Drinks and cat treats can be ordered separately in the shop</span>
+    </div>
+  </div>
+
+  <div class="booking-pass">
+    <div class="title-price">
+      <span class="title">1h Pass + Iced Coffee/Chocolate or Iced Fruity Tea</span>
+      <span class="price">$25.50 per person</span>
+    </div>
+    <div class="pass-row">
+      <input type="number" min="0" placeholder="0" class="quantity-input" />
+    </div>
+  </div>
+
+  <div class="booking-pass">
+    <div class="title-price">
+      <span class="title">1h Pass + Milkshake + Biscuits + Cat Paste</span>
+      <span class="price">$31 per person</span>
+    </div>
+    <div class="pass-row">
+      <input type="number" min="0" placeholder="0" class="quantity-input" />
+    </div>
+  </div>
+
+  <div class="booking-pass">
+    <div class="title-price">
+      <span class="title">1h Pass + Drink + Catnip Cookie + Freeze Dried Treats + Sticker</span>
+      <span class="price">$32 per person</span>
+    </div>
+    <div class="pass-row">
+      <input type="number" min="0" placeholder="0" class="quantity-input" />
+    </div>
+  </div>
+
+  <div class="booking-pass">
+    <div class="title-price">
+      <span class="title">Cat Happy Meal</span>
+      <span class="price">$35 per person</span>
+    </div>
+    <div class="pass-row">
+      <input type="number" min="0" placeholder="0" class="quantity-input" />
+    </div>
+  </div>
+
+  <div class="booking-pass">
+    <div class="title-price">
+      <span class="title">Cat Loves You Pack</span>
+      <span class="price">$41 per person</span>
+    </div>
+    <div class="pass-row">
+      <input type="number" min="0" placeholder="0" class="quantity-input" />
+    </div>
+  </div>
+
+  <div class="booking-pass">
+    <div class="title-price">
+      <span class="title">Holiday Kitty Pack</span>
+      <span class="price">$43 per person</span>
+    </div>
+    <div class="pass-row">
+      <input type="number" min="0" placeholder="0" class="quantity-input" />
+    </div>
+  </div>
+
+  <div class="booking-pass">
+    <div class="title-price">
+      <span class="title">1h30 Pass + Drink + Cat Treats</span>
+      <span class="price">$38.50 per person</span>
+    </div>
+    <div class="pass-row">
+      <input type="number" min="0" placeholder="0" class="quantity-input" />
+      <span class="extra-info">Please DO NOT book the 3pm and 4pm session</span>
+    </div>
+  </div>
+
+  <div class="booking-pass">
+    <div class="title-price">
+      <span class="title">2h Pass + Drink + Cat Treats</span>
+      <span class="price">$47 per person</span>
+    </div>
+    <div class="pass-row">
+      <input type="number" min="0" placeholder="0" class="quantity-input" />
+      <span class="extra-info">Please DO NOT book the 3pm and 4pm session</span>
+    </div>
+  </div>
+
+  <div class="booking-pass">
+    <div class="title-price">
+      <span class="title">Souvenir Pack</span>
+      <span class="price">$68 per person</span>
+    </div>
+    <div class="pass-row">
+      <input type="number" min="0" placeholder="0" class="quantity-input" />
+    </div>
+  </div>
+
+  <div class="booking-pass">
+    <div class="title-price">
+      <span class="title">Cat Cafe Souvenir Pack</span>
+      <span class="price">$68 per person</span>
+    </div>
+    <div class="pass-row">
+      <input type="number" min="0" placeholder="0" class="quantity-input" />
+    </div>
+  </div>
+
+  <div class="booking-pass">
+    <div class="title-price">
+      <span class="title">3h Pass + Drink + Cat Treats (x2)</span>
+      <span class="price">$70 per person</span>
+    </div>
+    <div class="pass-row">
+      <input type="number" min="0" placeholder="0" class="quantity-input" />
+      <span class="extra-info">Please DO NOT book the 2pm, 3pm and 4pm session</span>
+    </div>
+  </div>
+</div>
+
+
+    </div>
+</div>
+
+
+    <footer class="main-footer">
+    <div class="footer-info">
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Booking and Refund Policy</a>
+        <a href="#">Terms and Conditions</a>
+      </div>
+      <div class="footer-address">
+        <strong>Location and Opening Hours:</strong><br/>
+        512 Swanston St, Carlton 3053<br/>
+        Opening hours may vary. Check our calendar for available sessions and hours.<br/>
+        (We reserve the right to close early if there are no bookings or cats require medical care)
+      </div>
+      <div class="social-icons">
+        <a href="#"><img src="Footer/facebook.png" alt="Facebook" /></a>
+        <a href="#"><img src="Footer/instagram.png" alt="Instagram" /></a>
+        <a href="#"><img src="Footer/pintrest.png" alt="Pinterest" /></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+      const calendarBody = document.getElementById('calendar-body');
+    const timeslotContainer = document.getElementById('timeslot-container');
+
+    const calendarDays = [
+      [0, 0, 0, 1, 2, 3, 4],
+      [31, 1, 2, 3, 4, 5, 6],
+      [7, 8, 9, 10, 11, 12, 13],
+      [14, 15, 16, 17, 18, 19, 20],
+      [21, 22, 23, 24, 25, 26, 27],
+    ];
+
+    const unavailableDays = [31, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+    let selectedDateCell = null;
+    let selectedTimeslot = null;
+
+    const times = [
+      { time: "12:00pm", available: true },
+      { time: "1:00pm", available: true },
+      { time: "2:00pm", available: true },
+      { time: "3:00pm", available: false },
+      { time: "4:00pm", available: false },
+      { time: "5:00pm", available: true },
+    ];
+
+    // Build calendar
+    calendarDays.forEach(week => {
+      const row = document.createElement('tr');
+      week.forEach(day => {
+        const cell = document.createElement('td');
+        if (day === 0) {
+          cell.textContent = "";
+        } else {
+          cell.textContent = day;
+          if (unavailableDays.includes(day)) {
+            cell.classList.add('unavailable');
+          } else {
+            cell.classList.add('available');
+            cell.addEventListener('click', () => {
+              if (selectedDateCell) {
+                selectedDateCell.classList.remove('selected');
+              }
+              if (selectedDateCell === cell) {
+                selectedDateCell = null;
+                cell.classList.remove('selected');
+                timeslotContainer.style.display = 'none';
+              } else {
+                cell.classList.add('selected');
+                selectedDateCell = cell;
+                showTimeslots();
+              }
+            });
+          }
+        }
+        row.appendChild(cell);
+      });
+      calendarBody.appendChild(row);
+    });
+
+
+    function showTimeslots() {
+      timeslotContainer.innerHTML = '';
+      timeslotContainer.style.display = 'block';
+      selectedTimeslot = null;
+
+      times.forEach(slot => {
+        const div = document.createElement('div');
+        div.textContent = slot.time; // <<< CHANGED LINE HERE
+        div.classList.add('timeslot');
+        div.classList.add(slot.available ? 'available' : 'unavailable');
+
+        if (slot.available) {
+          div.addEventListener('click', () => {
+            if (selectedTimeslot === div) {
+              div.classList.remove('selected');
+              selectedTimeslot = null;
+            } else {
+              if (selectedTimeslot) {
+                selectedTimeslot.classList.remove('selected');
+              }
+              div.classList.add('selected');
+              selectedTimeslot = div;
+            }
+          });
+        }
+
+        timeslotContainer.appendChild(div);
+      });
+
+       const hamburger = document.querySelector('.hamburger');
+  const mobileMenu = document.querySelector('.nav-menu-mobile');
+
+  hamburger.addEventListener('click', () => {
+    mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+  });
+    }
+  </script>
+</body>
+</html>
