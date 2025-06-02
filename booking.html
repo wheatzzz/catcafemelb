@@ -26,17 +26,19 @@
     <nav class="nav-menu">
       <ul>
         <li><a href="index.html">HOME</a></li>
-        <li><a href="services.html">ABOUT US</a></li>
-        <li><a href="#">BOOK YOUR VISIT</a></li>
+        <li><a href="#">ABOUT US</a></li>
+        <li><a href="services.html">BOOK YOUR VISIT</a></li>
         <li><a href="#">DONATION</a></li>
         <li><a href="#">FAQS</a></li>
         <li><a href="#">CONTACT US</a></li>
       </ul>
     </nav>
 
-    <div class="search-container">
-      <input type="search" placeholder="Search..." />
-    </div>
+       <div class="search-container">
+  <input type="search" placeholder="Search..." id="mobile-search" />
+  <div class="recent-search" id="recent-search">Recently searched: <strong id="recent-keyword">General Visit Pass</strong></div>
+</div>
+
 
     <div class="cart-profile">
       <a href="#"><img src="header/shoppingcart.png" alt="Cart Icon" /></a>
@@ -56,6 +58,10 @@
     </div>
   </header>
 
+  <button class="scroll-to-top" onclick="scrollToTop()">
+  ↑
+</button>
+
    <div class="main-columns">
   <div class="left-column">
     <!-- Placeholder for images -->
@@ -63,9 +69,35 @@
         <img src="Booking/BookYourVisit2.png" alt="Book_your_Visit" />
         <img src="Booking/product_entry_info.png" alt="product_entry_info" />
     </div>
+
+    <section class="important-info">
+  <h2>IMPORTANT INFO</h2>
+  <ul>
+    <li>All bookings are non-refundable and cannot be rescheduled if any participant failed to turn up for their session or have booked surplus entries.</li>
+    <li>All bookings cannot be exchanged for cash, store credit and store merchandise.</li>
+    <li>If you fail to show up on the day or decide to cancel your booking, the amount will be treated as donation, contributing towards the cats’ care.</li>
+    <li>Bookings can be rescheduled on a one-off basis. We require visitors to provide at least 24 hours’ notice before the original booking date when rescheduling.</li>
+    <li>We do not allow bookings to be split into different days/times. Please reply to the booking confirmation email with your new preferred date and time.</li>
+    <li>Booking the maximum available spots (24 persons) per session does not make your session a private session. We may still accept walk-in visitors.</li>
+    <li>No children under 8 years old are allowed.</li>
+    <li>DO NOT bring your own food/drinks. Only food/drinks purchased from us can be consumed in the cat lounge.</li>
+    <li>DO NOT bring your own cat food/treats. Only treats purchased from us can be given to our cats.</li>
+    <li>Do NOT feed the cats with your hands/fingers. Leave treats on the table/floor to avoid accidental bites or scratches.</li>
+    <li>You may arrive 5–10 minutes early to check in, read the rules and order your drinks.</li>
+    <li>Sessions run on time. We cannot give extra time if you arrive late.</li>
+    <li>Please remove your shoes in the cat lounge. Wear your own socks or our slippers. Shoe covers are included in some tickets.</li>
+    <li>Store your bags in the storage cabinet. You may bring your mobile and wallet with you into the cat area.</li>
+    <li>Any lost items, damages, and injuries are your responsibility.</li>
+    <li>Do not chase, pick up or restrain the cats. Sit and relax — the cats will come to you!</li>
+    <li>We are not liable for any injuries or losses resulting from your interaction with the cats. Cats can sometimes scratch or bite.</li>
+  </ul>
+</section>
+
   </div>
 
   <div class="right-column">
+
+    <div class="calendar-container">
       <h2>Book a General Visit at Cat Café</h2>
       <p>Times are in Australia/Melbourne</p>
     <!-- Calendar container -->
@@ -93,11 +125,12 @@
     <div class="timeslots" id="timeslot-container">
       <!-- Timeslots generated after date selection -->
     </div>
-    
+  </div>
+
     <div class="booking-container">
   <div class="booking-pass">
     <div class="title-price">
-      <span class="title">1h Pass + Hot Coffee/Chocolate or Hot Tea</span>
+      <span class="title">1h Pass + Hot Coffee/Chocolate/Tea</span>
       <span class="price">$24.50 per person</span>
     </div>
     <div class="pass-row">
@@ -130,7 +163,7 @@
 
   <div class="booking-pass">
     <div class="title-price">
-      <span class="title">1h Pass + Iced Coffee/Chocolate or Iced Fruity Tea</span>
+      <span class="title">1h Pass + Iced Coffee/Chocolate/Tea</span>
       <span class="price">$25.50 per person</span>
     </div>
     <div class="pass-row">
@@ -150,7 +183,7 @@
 
   <div class="booking-pass">
     <div class="title-price">
-      <span class="title">1h Pass + Drink + Catnip Cookie + Freeze Dried Treats + Sticker</span>
+      <span class="title">1h Pass + Drink + Cat Treats + Sticker</span>
       <span class="price">$32 per person</span>
     </div>
     <div class="pass-row">
@@ -240,8 +273,12 @@
       <span class="extra-info">Please DO NOT book the 2pm, 3pm and 4pm session</span>
     </div>
   </div>
+
 </div>
 
+ <div class="button-container">
+  <a href="#booking" class="book-now-btn">Book Now</a>
+</div>
 
     </div>
 </div>
@@ -269,6 +306,13 @@
   </footer>
 
   <script>
+
+      function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
       const calendarBody = document.getElementById('calendar-body');
     const timeslotContainer = document.getElementById('timeslot-container');
 
@@ -365,5 +409,6 @@
   });
     }
   </script>
+  
 </body>
 </html>

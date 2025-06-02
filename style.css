@@ -100,6 +100,27 @@ body {
   width: 220px;
 }
 
+.recent-search {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  margin-top: 4px;
+  font-size: 0.9rem;
+  color: #333;
+  width: 100%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  z-index: 10;
+  cursor: pointer;
+}
+.recent-search strong {
+  color: #027D42;
+}
+
 .cart-profile {
   order: 5;
   display: flex;
@@ -193,6 +214,7 @@ body {
 .intro {
   text-align: center;
   padding: 40px 20px;
+  
 }
 
 .intro strong {
@@ -205,8 +227,24 @@ body {
   margin-bottom: 15px;
   font-family: 'Roboto Slab', serif;
   font-weight: 700;
-  text-decoration: underline
+  text-decoration: underline;
+   text-decoration-thickness: 1.5px;
 }
+
+.cartempty-intro {
+padding: 15px;
+}
+
+.cartempty-intro h2 {
+  color: #027D42;
+  font-size: 26px;
+  margin: 15px;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  text-decoration: underline;
+   text-decoration-thickness: 1.5px;
+}
+
 
 .right-column h2 {
 color: #8C4F2F;
@@ -215,12 +253,14 @@ color: #8C4F2F;
   font-family: 'Roboto Slab', serif;
   font-weight: 700;
   text-decoration: underline;
+  text-align: left;
 }
 
 .introService h2 {
   color:#027D42;
   font-size: 26px;
   margin-bottom: 15px;
+  margin-top: 25px;
   font-family: 'Roboto Slab', serif;
   font-weight: 700;
   text-decoration: underline
@@ -250,6 +290,37 @@ color: #8C4F2F;
   font-family: 'Roboto', sans-serif;
 }
 
+/* Scroll to Top Button - Mobile Only */
+.scroll-to-top {
+  display: none; /* Hidden by default */
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 48px;
+  height: 48px;
+  background-color: #027D42;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  transition: background-color 0.3s;
+}
+
+/* Show only on mobile */
+@media (max-width: 768px) {
+  .scroll-to-top {
+    display: block;
+  }
+}
+
+.scroll-to-top:hover {
+  background-color: #026838;
+}
+
 
 .cta-button {
   background-color: #027D42;
@@ -266,32 +337,71 @@ color: #8C4F2F;
   background-color: rgba(2, 125, 66, 0.7);
 }
 
-/* Passes section */
-.passes {
+.button-container {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 15px 30px;
-  gap: 12px;
-  max-width: 980px;
-  margin: 0 auto 50px;
+  justify-content: center; /* center the button horizontally */
+  margin: 2rem 0; /* space above and below */
+  z-index: 1; /* ensure it sits above background, but under important overlays */
 }
 
+.book-now-btn {
+  background-color: #027D42;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  font-family: 'Roboto', sans-serif;
+}
+
+.book-now-btn:hover {
+  background-color: #026838;
+}
+
+
+/* Passes wrapper */
+.passes-wrapper {
+  padding: 1rem 0;
+}
+
+/* Passes container */
+.passes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  max-width: 980px;
+  margin: 0 auto 50px;
+  padding: 0 16px;
+}
+
+/* Individual pass: 4 per row desktop */
 .pass {
   position: relative;
-  width: 22%;
+  flex: 1 1 calc(25% - 16px);
+  max-width: calc(25% - 16px);
   aspect-ratio: 2 / 3;
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
   font-family: 'Roboto Slab', serif;
   font-weight: 800;
   color: white;
   box-shadow: 0 2px 6px rgb(0 0 0 / 0.2);
-  display: flex;
-  flex-direction: column;
 }
 
+/* 2 per row on mobile (below 900px) */
+@media (max-width: 900px) {
+  .pass {
+    flex: 1 1 calc(50% - 16px);
+    max-width: calc(50% - 16px);
+  }
+}
+
+/* Image inside pass */
 .pass img {
   width: 100%;
   height: 100%;
@@ -302,35 +412,35 @@ color: #8C4F2F;
   z-index: 1;
 }
 
-/* Brown bottom bar filling entire bottom in normal state */
+/* Bottom colored bar (default state) */
 .pass::after {
   content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 20%;  /* 1/5 of height */
+  height: 20%;
   background-color: #8C4F2F;
   border-radius: 0 0 12px 12px;
   z-index: 2;
   transition: background-color 0.35s ease, height 0.35s ease;
 }
 
-/* Hover states: green bar height doubles to 2/5 */
+/* Hover state changes bar */
 .pass:hover::after {
   background-color: #027D42;
   height: 40%;
 }
 
-/* Pass title - centered horizontally and vertically inside colored panel unhovered */
+/* Title (centered) */
 .pass::before {
   content: attr(data-label);
   position: absolute;
-  bottom: 10%; /* vertically centered in 20% height (1/5) panel */
+  bottom: 10%;
   width: 100%;
   font-family: 'Roboto Slab', serif;
   font-weight: 800;
-  font-size: 18px;
+  font-size: clamp(12px, 2vw, 18px);
   text-align: center;
   color: white;
   white-space: nowrap;
@@ -340,30 +450,32 @@ color: #8C4F2F;
   pointer-events: none;
   transition: bottom 0.35s ease;
   line-height: 1;
+  text-decoration: underline;
 }
-
 
 .pass:hover::before {
-  bottom: 28%; 
+  bottom: 28%;
 }
 
-/* Description inside the panel, hidden by default */
+/* Description (hidden by default) */
 .pass p {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  margin: 0;
-  padding: 0 12px;
   position: absolute;
-  bottom: 12%; 
-  width: calc(100% - 24px); 
+  bottom: 0;
+  height: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  width: 100%;
   color: white;
   opacity: 0;
+  font-size: clamp(10px, 1.6vw, 14px);
   text-align: center;
   z-index: 6;
   transition: opacity 0.35s ease;
   pointer-events: none;
-  line-height: 1.3;
+  line-height: 1.2;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* Show description on hover */
@@ -372,7 +484,7 @@ color: #8C4F2F;
   pointer-events: auto;
 }
 
-/* Image opacity on hover */
+/* Image dim on hover */
 .pass:hover img {
   opacity: 0.35;
 }
@@ -418,6 +530,70 @@ color: #8C4F2F;
   margin-top: 10px;
  
 }
+
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+    background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.important-info {
+  max-width: 550px; /* Adjust based on your booking pass width */
+  margin: 2rem auto 4rem auto;
+  padding: 0 1rem;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  text-align: left;
+}
+
+.important-info h2 {
+  font-size: 0.9rem;
+  color: #027D42;
+  border-bottom: 2px solid #027D42;
+  padding-bottom: 0.3rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-align: left;
+}
+
+.important-info ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  font-size: 0.65rem;
+  line-height: 1.4;
+}
+
+.important-info li {
+  margin-bottom: 0.6rem;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .important-info h2 {
+    font-size: 1.1rem;
+  }
+
+  .important-info ul {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .important-info h2 {
+    font-size: 1rem;
+  }
+
+  .important-info ul {
+    font-size: 0.85rem;
+  }
+}
+
 
 .calendar table {
   border-collapse: collapse;
@@ -603,7 +779,7 @@ color: #8C4F2F;
   flex-wrap: wrap;
   gap: 0.5rem;
   padding: 1rem;
-  justify-content: space-between;
+ 
 }
 
 .left-column, .right-column {
@@ -629,6 +805,7 @@ color: #8C4F2F;
   height: auto;
   object-fit: cover;
 }
+
 
 
 
@@ -697,18 +874,7 @@ color: #8C4F2F;
   }
 }
 
-/* Passes responsive size on smaller devices */
-@media screen and (max-width:768px) {
-  .pass {
-    width: 45%;
-  }
-}
 
-@media screen and (max-width: 400px) {
-  .pass {
-    width: 90%;
-  }
-}
 
 /* Nav text responsive font size adjustment to avoid wrapping */
 @media screen and (max-width: 768px) {
