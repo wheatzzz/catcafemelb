@@ -1,0 +1,121 @@
+/* Passes wrapper */
+.passes-wrapper {
+  padding: 1rem 0;
+}
+
+/* Passes container */
+.passes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  max-width: 980px;
+  margin: 0 auto 50px;
+  padding: 0 16px;
+}
+
+/* Individual pass: 4 per row desktop */
+.pass {
+  position: relative;
+  flex: 1 1 calc(25% - 16px);
+  max-width: calc(25% - 16px);
+  aspect-ratio: 2 / 3;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 800;
+  color: white;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.2);
+}
+
+
+/* Image inside pass */
+.pass img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.35s ease;
+  flex-grow: 1;
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+/* Bottom colored bar (default state) */
+.pass::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background-color: #8C4F2F;
+  border-radius: 0 0 12px 12px;
+  z-index: 2;
+  transition: background-color 0.35s ease, height 0.35s ease;
+}
+
+/* Hover state changes bar */
+.pass:hover::after {
+  background-color: #027D42;
+  height: 40%;
+}
+
+/* Title (centered) */
+.pass::before {
+  content: attr(data-label);
+  position: absolute;
+  bottom: 10%;
+  width: 100%;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 800;
+  font-size: clamp(12px, 2vw, 18px);
+  text-align: center;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  z-index: 3;
+  pointer-events: none;
+  transition: bottom 0.35s ease;
+  line-height: 1;
+  text-decoration: underline;
+}
+
+.pass:hover::before {
+  bottom: 28%;
+}
+
+/* Description (hidden by default) */
+.pass p {
+  position: absolute;
+  bottom: 0;
+  height: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  width: 100%;
+  color: white;
+  opacity: 0;
+  font-size: clamp(10px, 1.6vw, 14px);
+  text-align: center;
+  z-index: 6;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  line-height: 1.2;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Show description on hover */
+.pass:hover p {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Image dim on hover */
+.pass:hover img {
+  opacity: 0.35;
+}

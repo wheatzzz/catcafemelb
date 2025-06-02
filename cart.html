@@ -4,9 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cat Café Melbourne</title>
-  <link href="style.css" rel="stylesheet"/>
- 
-
+  <link rel="stylesheet" href="css/general.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/responsiveness.css">
+  <link rel="stylesheet" href="css/passes.css">
+  <link rel="stylesheet" href="css/cart.css">
+  <link rel="stylesheet" href="css/booking.css">
 </head>
 <body>
 
@@ -61,7 +65,64 @@
     </div>
   </header>
 
+<body>
+  <div class="cart-container">
+    <div class="notice-success">
+      <span>“Book a session to visit the Cat Café” has been added to your cart.</span>
+      <a href="#" style="color: #666; font-size: 0.85rem;">CONTINUE SHOPPING</a>
+    </div>
 
+
+    <div class="cart-body">
+      <div class="cart-items">
+        <!-- Product 1 -->
+        <div class="cart-product">
+          <span class="remove-button">✖</span>
+          <img src="/images/product1.png" alt="Product 1">
+          <div class="cart-product-details">
+            <div class="cart-product-title">Book a session to visit the Cat Café</div>
+            <div class="cart-product-info">Booking Date: April 12, 2025<br>Booking Time: 12:00 am<br>1h Pass + Complimentary Drink ($22 per person):</div>
+            <div class="cart-product-price">$22.00 × 1 = $22.00</div>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="cart-product">
+          <span class="remove-button">✖</span>
+          <img src="/images/product2.png" alt="Product 2">
+          <div class="cart-product-details">
+            <div class="cart-product-title">Book a session to visit the Cat Café</div>
+            <div class="cart-product-info">Booking Date: April 12, 2025<br>Booking Time: 12:00 am<br>1h Pass + Hot Coffee/Chocolate or Hot Tea ($24.50 per person):</div>
+            <div class="cart-product-price">$24.50 × 1 = $24.50</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cart-totals">
+        <div class="totals-section">
+          <p><strong>SUBTOTAL</strong> <span>$46.50</span></p>
+          <p><strong>TOTAL</strong> <span>$46.50</span></p>
+        </div>
+        <button class="checkout-button">PROCEED TO CHECKOUT</button>
+        <button class="back-button">BACK TO BOOKING PAGE</button>
+      </div>
+    </div>
+
+    <div class="recommendations">
+      <h3>You may be interested in…</h3>
+      <div class="recommendation-items">
+        <div class="recommendation-card">
+          <img src="/images/value-pass.png" alt="Value-Multi Pass">
+          <div>Value-Multi Pass</div>
+        </div>
+        <div class="recommendation-card">
+          <img src="/images/gift-voucher.png" alt="Digital Gift Voucher">
+          <div>Digital Gift Voucher</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
 
 
    <footer class="main-footer">

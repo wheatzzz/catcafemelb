@@ -1,0 +1,135 @@
+/* Responsive */
+@media screen and (max-width: 850px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .cart-profile {
+    margin-left: 10px;
+  }
+
+  .search-container {
+    margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .main-header {
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+  .logo {
+    order: 2;
+    width: auto;
+    margin-right: 10px;
+  }
+
+  .hamburger {
+    order: 1;
+    margin-right: 10px;
+    align-self: center;
+  }
+
+  .nav-menu-mobile {
+    display: none;
+  }
+
+  .search-container,
+  .cart-profile {
+    display: none;
+  }
+
+  /* Show hamburger and mobile nav only */
+
+  /* Make mobile nav display block when toggled */
+  .nav-menu-mobile.active {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Place cart and profile icons to the right of logo in header */
+  .cart-profile {
+    display: flex;
+    order: 3;
+    margin-left: auto;
+  }
+}
+
+
+
+/* Nav text responsive font size adjustment to avoid wrapping */
+@media screen and (max-width: 768px) {
+  .nav-menu a {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .nav-menu a {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-columns {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-columns {
+    flex-direction: column;
+  }
+
+  .left-column, .right-column {
+    width: 100%;
+  }
+
+  .right-column {
+    padding: 20px;
+  }
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .important-info h2 {
+    font-size: 1.1rem;
+  }
+
+  .important-info ul {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .important-info h2 {
+    font-size: 1rem;
+  }
+
+  .important-info ul {
+    font-size: 0.85rem;
+  }
+}
+
+/* 2 per row on mobile (below 900px) */
+@media (max-width: 900px) {
+  .pass {
+    flex: 1 1 calc(50% - 16px);
+    max-width: calc(50% - 16px);
+  }
+}
+
+/* Show only on mobile */
+@media (max-width: 768px) {
+  .scroll-to-top {
+    display: block;
+  }
+}

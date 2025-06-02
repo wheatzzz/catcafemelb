@@ -1,0 +1,127 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #333;
+  text-align: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} 
+
+
+/* Hero image */
+.hero img {
+  width: 100%;
+  display: block;
+}
+
+/* Intro section */
+.intro {
+  text-align: center;
+  padding: 40px 20px;
+  
+}
+
+.intro strong {
+  color: #027D42
+}
+
+.intro h2 {
+  color: #8C4F2F;
+  font-size: 26px;
+  margin-bottom: 15px;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  text-decoration: underline;
+   text-decoration-thickness: 1.5px;
+}
+
+.cartempty-intro {
+padding: 15px;
+}
+
+.cartempty-intro h2 {
+  color: #027D42;
+  font-size: 26px;
+  margin: 15px;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  text-decoration: underline;
+   text-decoration-thickness: 1.5px;
+}
+
+
+.right-column h2 {
+color: #8C4F2F;
+  font-size: 26px;
+  margin-bottom: 15px;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  text-decoration: underline;
+  text-align: left;
+}
+
+.introService h2 {
+  color:#027D42;
+  font-size: 26px;
+  margin-bottom: 15px;
+  margin-top: 25px;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  text-decoration: underline
+}
+
+.introService p {
+   font-size: 14px;
+  line-height: 1.6;
+  max-width: 1000px;
+  margin: 0 auto 30px;
+  font-family: 'Roboto', sans-serif;
+  padding: 0 10px;
+}
+
+.intro p {
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.right-column p{
+   font-size: 12px;
+  line-height: 1.6;
+  max-width: 700px;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Scroll to Top Button - Mobile Only */
+.scroll-to-top {
+  display: none; /* Hidden by default */
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 48px;
+  height: 48px;
+  background-color: #027D42;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  transition: background-color 0.3s;
+}
+
+
+
+
+
+
