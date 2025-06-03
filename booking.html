@@ -4,7 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cat Café Booking</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/general.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/passes.css">
+  <link rel="stylesheet" href="css/cart.css">
+  <link rel="stylesheet" href="css/booking.css"> 
+  <link rel="stylesheet" href="css/responsiveness.css">
 </head>
 <body>
   <header class="main-header">
@@ -41,7 +47,7 @@
 
 
     <div class="cart-profile">
-      <a href="#"><img src="header/shoppingcart.png" alt="Cart Icon" /></a>
+      <a href="cart.html"><img src="header/shoppingcart.png" alt="Cart Icon" /></a>
       <a href="#"><img src="Header/profile.png" alt="Profile Icon" /></a>
     </div>
 
@@ -99,7 +105,7 @@
 
     <div class="calendar-container">
       <h2>Book a General Visit at Cat Café</h2>
-      <p>Times are in Australia/Melbourne</p>
+      <p>Times are in Australia/Melbourne for the Current Month</p>
     <!-- Calendar container -->
     <div class="calendar">
       <table>
@@ -276,8 +282,8 @@
 
 </div>
 
- <div class="button-container">
-  <a href="#booking" class="book-now-btn">Book Now</a>
+<div class="button-container">
+  <button id="book-now-btn" class="book-now-btn">BOOK NOW</button>
 </div>
 
     </div>
@@ -408,6 +414,54 @@
     mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
   });
     }
+
+    document.getElementById('book-now-btn').addEventListener('click', function(e) {
+  // Prevent default navigation for now
+  e.preventDefault();
+
+  // Get selected date and timeslot
+  const selectedDate = selectedDateCell ? parseInt(selectedDateCell.textContent) : null;
+  const selectedTime = selectedTimeslot ? selectedTimeslot.textContent.trim() : null;
+
+  // Get all pass quantities
+  const passes = document.querySelectorAll('.booking-pass');
+  // Map title to quantity
+  let quantities = {};
+  passes.forEach(pass => {
+    const title = pass.querySelector('.title').textContent.trim();
+    const qtyInput = pass.querySelector('input.quantity-input');
+    const qty = qtyInput ? parseInt(qtyInput.value) || 0 : 0;
+    quantities[title] = qty;
+  });
+
+  // Define the two required passes titles exactly as in HTML
+  const pass1 = "1h Pass + Hot Coffee/Chocolate/Tea";
+  const pass2 = "1h Pass + Complimentary Drink";
+
+  // Check conditions
+  const conditionDate = selectedDate === 12;
+  const conditionTime = selectedTime === "12:00pm";
+
+  const conditionPass1 = quantities[pass1] === 1;
+  const conditionPass2 = quantities[pass2] === 1;
+
+  // Check no other passes selected (all others zero)
+  let otherPassesSelected = false;
+  for (const [title, qty] of Object.entries(quantities)) {
+    if (title !== pass1 && title !== pass2 && qty > 0) {
+      otherPassesSelected = true;
+      break;
+    }
+  }
+
+  if (conditionDate && conditionTime && conditionPass1 && conditionPass2 && !otherPassesSelected) {
+    // Conditions satisfied, allow navigation to cart page
+    window.location.href = 'cart.html';
+  } else {
+    alert("Sorry, the product is unavailable.\n\nYou must book exactly 1 x '1h Pass + Hot Coffee/Chocolate/Tea' and 1 x '1h Pass + Complimentary Drink' for the 12th at 12:00pm only.");
+  }
+});
+
   </script>
   
 </body>

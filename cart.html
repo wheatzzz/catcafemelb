@@ -7,10 +7,10 @@
   <link rel="stylesheet" href="css/general.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/footer.css">
-  <link rel="stylesheet" href="css/responsiveness.css">
   <link rel="stylesheet" href="css/passes.css">
   <link rel="stylesheet" href="css/cart.css">
-  <link rel="stylesheet" href="css/booking.css">
+  <link rel="stylesheet" href="css/booking.css"> 
+  <link rel="stylesheet" href="css/responsiveness.css">
 </head>
 <body>
 
@@ -48,7 +48,7 @@
 
 
     <div class="cart-profile">
-      <a href="#"><img src="header/shoppingcart.png" alt="Cart Icon" /></a>
+      <a href="cart.html"><img src="header/shoppingcart.png" alt="Cart Icon" /></a>
       <a href="#"><img src="Header/profile.png" alt="Profile Icon" /></a>
     </div>
 
@@ -67,62 +67,111 @@
 
 <body>
   <div class="cart-container">
-    <div class="notice-success">
-      <span>“Book a session to visit the Cat Café” has been added to your cart.</span>
-      <a href="#" style="color: #666; font-size: 0.85rem;">CONTINUE SHOPPING</a>
-    </div>
+  <div class="notice-success">
+    <span>“General Visit Pass” has been added to your cart.</span>
+    <a href="services.html" style="color: #666; font-size: 0.85rem;">CONTINUE SHOPPING</a>
+  </div>
 
-
-    <div class="cart-body">
-      <div class="cart-items">
-        <!-- Product 1 -->
-        <div class="cart-product">
-          <span class="remove-button">✖</span>
-          <img src="/images/product1.png" alt="Product 1">
-          <div class="cart-product-details">
-            <div class="cart-product-title">Book a session to visit the Cat Café</div>
-            <div class="cart-product-info">Booking Date: April 12, 2025<br>Booking Time: 12:00 am<br>1h Pass + Complimentary Drink ($22 per person):</div>
-            <div class="cart-product-price">$22.00 × 1 = $22.00</div>
-          </div>
-        </div>
-
-        <!-- Product 2 -->
-        <div class="cart-product">
-          <span class="remove-button">✖</span>
-          <img src="/images/product2.png" alt="Product 2">
-          <div class="cart-product-details">
-            <div class="cart-product-title">Book a session to visit the Cat Café</div>
-            <div class="cart-product-info">Booking Date: April 12, 2025<br>Booking Time: 12:00 am<br>1h Pass + Hot Coffee/Chocolate or Hot Tea ($24.50 per person):</div>
-            <div class="cart-product-price">$24.50 × 1 = $24.50</div>
-          </div>
-        </div>
+  <div class="cart-body">
+    <!-- Cart Items -->
+    <div class="cart-items">
+      <div class="cart-header">
+        <div class="header-remove"></div>
+        <div class="header-image-placeholder"></div>
+        <p class="header-product">Product</p>
+        <p class="header-price">Price</p>
+        <p class="header-quantity">Quantity</p>
+        <p class="header-subtotal">Subtotal</p>
       </div>
 
-      <div class="cart-totals">
-        <div class="totals-section">
-          <p><strong>SUBTOTAL</strong> <span>$46.50</span></p>
-          <p><strong>TOTAL</strong> <span>$46.50</span></p>
+      <!-- Product 1 -->
+      <div class="cart-product">
+        <span class="remove-button">✖</span>
+        <img src="Booking/BookYourVisit2.png" alt="Product 1">
+        <div class="cart-product-details">
+          <div class="cart-product-title">General Visit Pass: 1h Pass + Complimentary Drink</div>
+          <div class="cart-product-info">Booking Date: June 12, 2025<br>Booking Time: 12:00 am<br>1h Pass + Complimentary Drink ($22 per person):</div>
         </div>
-        <button class="checkout-button">PROCEED TO CHECKOUT</button>
-        <button class="back-button">BACK TO BOOKING PAGE</button>
+        <p class="cart-product-price">$22.00</p>
+        <p class="cart-product-quantity">1</p>
+        <p class="cart-product-subtotal">$22.00</p>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="cart-product">
+        <span class="remove-button">✖</span>
+        <img src="Booking/BookYourVisit2.png" alt="Product 2">
+        <div class="cart-product-details">
+          <div class="cart-product-title">General Visit Pass: 1h Pass + Hot Coffee/Chocolate/Tea</div>
+          <div class="cart-product-info">Booking Date: June 12, 2025<br>Booking Time: 12:00 am<br>1h Pass + Hot Coffee/Chocolate or Hot Tea ($24.50 per person):</div>
+        </div>
+        <p class="cart-product-price">$24.50</p>
+        <p class="cart-product-quantity">1</p>
+        <p class="cart-product-subtotal">$24.50</p>
       </div>
     </div>
 
-    <div class="recommendations">
+    <!-- Cart Totals -->
+    <div class="cart-totals">
+      <h2 class="cart-heading">Cart Total</h2>
+      <div class="totals-section">
+        <p>SUBTOTAL<span>$46.50</span></p>
+        <hr>
+        <p>TOTAL<span>$46.50</span></p>
+      </div>
+      <a class="checkout-button" href="payment.html">PROCEED TO CHECKOUT</a> 
+      <a class="back-button" href="booking.html">BACK</a>
+    </div>
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <div class="recommendation">
       <h3>You may be interested in…</h3>
-      <div class="recommendation-items">
-        <div class="recommendation-card">
-          <img src="/images/value-pass.png" alt="Value-Multi Pass">
-          <div>Value-Multi Pass</div>
-        </div>
-        <div class="recommendation-card">
-          <img src="/images/gift-voucher.png" alt="Digital Gift Voucher">
-          <div>Digital Gift Voucher</div>
-        </div>
+       <section class="passes-wrapper">
+    <section class="passes">
+    <div class="pass" data-label="Value-Multi Pass">
+    <img src="catpasses/Ruby.png" alt="Cat 3" />
+    <p>Specially crafted for those who visit us often</p>
+  </div>
+  <div class="pass" data-label="Digital Gift Voucher">
+    <img src="catpasses/Hazel.png" alt="Cat 4" />
+    <p>Treat your family and friends with a visit to us</p>
+  </div>
+    </section>
+ 
       </div>
     </div>
   </div>
 </body>
+
+
+
+      <!-- Cart Empty -->
+    <section class="cartempty-intro">
+        <h2>Oh No! Your Cart is Empty!</h2>
+        <p>
+        You may be interested in…
+        </p>
+    </section>
+
+    <section class="passes-wrapper">
+    <section class="passes">
+    <!-- Redirectable pass -->
+    <a href="booking.html" class="pass" data-label="General Visit Pass">
+        <img src="catpasses/Mackerel.png" alt="Cat 1" />
+        <p>Book a session to meet our friendly cats</p>
+    </a>
+
+    <!-- Non-redirectable passes -->
+    <div class="pass" data-label="Private Session">
+        <img src="catpasses/Clyde.png" alt="Cat 2" />
+        <p>For group and special events up to 30 people</p>
+    </div>
+    </section>
+    </section>
 
 
    <footer class="main-footer">

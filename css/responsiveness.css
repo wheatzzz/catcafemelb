@@ -63,6 +63,54 @@
   }
 }
 
+@media (max-width: 600px) {
+  .order-summary .row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .order-summary .row.total {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .order-summary .row span {
+    flex: none;
+    width: 100%;
+    text-align: left;
+  }
+
+  .order-summary .row.total span {
+    width: auto;
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .footer-address {
+    margin: 0 auto;
+    padding: 10px 0;
+  }
+
+  .footer-links a {
+    margin-bottom: 8px;
+    font-size: 15px;
+  }
+
+  .social-icons a img {
+    width: 28px;
+    margin-right: 8px;
+  }
+}
 
 
 /* Nav text responsive font size adjustment to avoid wrapping */
@@ -127,9 +175,82 @@
   }
 }
 
+
+
 /* Show only on mobile */
 @media (max-width: 768px) {
   .scroll-to-top {
     display: block;
   }
 }
+
+
+@media (max-width: 768px) {
+  .checkout-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  form.billing-details,
+  .order-summary {
+    width: 100%;
+  }
+
+  .card-placeholder {
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  .card-details-row {
+    flex-direction: column;
+  }
+
+  .card-input {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .card-input.small {
+    flex: none;
+    width: 100%;
+  }
+
+  .place-order {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .checkout h2 {
+    font-size: 22px;
+    padding: 20px 10px;
+  }
+
+  .billing-details h3,
+  .order-summary h3 {
+    font-size: 18px;
+  }
+
+  .row {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 14px;
+  }
+
+  .terms {
+    flex-direction: row;
+    align-items: flex-start;
+    font-size: 12px;
+    white-space: normal;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .privacy {
+    font-size: 12px;
+  }
+
+  .error-message {
+    font-size: 12px;
+  }
+}
+

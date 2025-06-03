@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cat Café Booking</title>
+  <link rel="stylesheet" href="css/general.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/passes.css">
+  <link rel="stylesheet" href="css/cart.css">
+  <link rel="stylesheet" href="css/booking.css"> 
+  <link rel="stylesheet" href="css/payment.css"> 
+  <link rel="stylesheet" href="css/responsiveness.css">
+</head>
+
+<body>
+  <header class="main-header">
+    <div class="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <div class="logo">
+  <a href="index.html">
+    <button>
+      <img src="Header/catcafe02.png" alt="Cat Cafe Logo" />
+    </button>
+  </a>
+</div>
+
+
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="#">ABOUT US</a></li>
+        <li><a href="services.html">BOOK YOUR VISIT</a></li>
+        <li><a href="#">DONATION</a></li>
+        <li><a href="#">FAQS</a></li>
+        <li><a href="#">CONTACT US</a></li>
+      </ul>
+    </nav>
+
+       <div class="search-container">
+  <input type="search" placeholder="Search..." id="mobile-search" />
+  <div class="recent-search" id="recent-search">Recently searched: <strong id="recent-keyword">General Visit Pass</strong></div>
+</div>
+
+<button class="scroll-to-top" onclick="scrollToTop()">
+  ↑
+</button>
+
+    <div class="cart-profile">
+      <a href="cart.html"><img src="header/shoppingcart.png" alt="Cart Icon" /></a>
+      <a href="#"><img src="Header/profile.png" alt="Profile Icon" /></a>
+    </div>
+
+    <div class="nav-menu-mobile">
+      <a href="index.html">HOME</a>
+      <a href="services.html">ABOUT US</a>
+      <a href="#">BOOK YOUR VISIT</a>
+      <a href="#">DONATION</a>
+      <a href="#">FAQS</a>
+      <a href="#">CONTACT US</a>
+      <div class="mobile-search-container">
+        <input type="search" placeholder="Search..." />
+      </div>
+    </div>
+  </header>
+
+  <main class="checkout">
+    <h2>Checkout</h2>
+    <div class="checkout-container">
+      <!-- Billing Details -->
+      <form class="billing-details">
+        <h3>Billing details</h3>
+        <div class="form-group" data-required="true">
+          <label>First name *</label>
+          <input type="text" required />
+        </div>
+        <div class="form-group" data-required="true">
+          <label>Last name *</label>
+          <input type="text" required />
+        </div>
+        <div class="form-group">
+          <label>Company name (optional)</label>
+          <input type="text" />
+        </div>
+        <div class="form-group" >
+          <label>Country / Region *</label>
+          <input type="text" value="Australia" disabled />
+        </div>
+        <div class="form-group" data-required="true">
+          <label>Street address *</label>
+          <input type="text" placeholder="House number and street name" required />
+          <input type="text" placeholder="Apartment, suite, unit, etc. (optional)" />
+        </div>
+        <div class="form-group" data-required="true">
+          <label>Town / City *</label>
+          <input type="text" required />
+        </div>
+        <div class="form-group">
+          <label>State / County *</label>
+          <select required>
+            <option>Victoria</option>
+          </select>
+        </div>
+        <div class="form-group" data-required="true">
+          <label>Postcode / ZIP *</label>
+          <input type="text" required />
+        </div>
+        <div class="form-group" data-required="true">
+          <label>Phone *</label>
+          <input type="tel" required />
+        </div>
+        <div class="form-group" data-required="true">
+          <label>Email address *</label>
+          <input type="email" required />
+        </div>
+        <div class="form-group full">
+          <h4>Additional information</h4>
+          <label>Order notes (optional)</label>
+          <textarea placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+        </div>
+      </form>
+
+      <!-- Order Summary -->
+      <div class="order-summary">
+        <h3>Your order</h3>
+        <div class="order-details">
+          <div class="row">
+            <span>Product</span>
+            <span>Subtotal</span>
+          </div>
+          <div class="row">
+            <span>Book a session to visit the Cat Café × 2</span>
+            <span>$46.50</span>
+          </div>
+          <div class="row">
+            <span>Subtotal</span>
+            <span>$46.50</span>
+          </div>
+          <div class="row">
+            <span>3% online transaction fee</span>
+            <span>$1.40</span>
+          </div>
+          <div class="row total">
+            <span>Total</span>
+            <span>$47.90</span>
+          </div>
+        </div>
+
+        <div class="payment-box">
+          <div class="card-placeholder">
+            <label for="card-type" data-required="true" class="card-label">Credit / Debit Card</label>
+            <div class="card-icons">
+                <img src="https://img.icons8.com/color/32/000000/visa.png" alt="Visa">
+                <img src="https://img.icons8.com/color/32/000000/mastercard.png" alt="Mastercard">
+                <img src="https://img.icons8.com/color/32/000000/amex.png" alt="Amex">
+            </div>
+
+            <input type="text" data-required="true" placeholder="Card Number" class="card-input" maxlength="19">
+            <div class="card-details-row">
+                <input type="text" data-required="true" placeholder="MM/YY" class="card-input small">
+                <input type="text" data-required="true" placeholder="CVC" class="card-input small">
+            </div>
+            <input type="text" data-required="true" placeholder="Cardholder Name" class="card-input">
+            </div>
+
+          <p class="privacy">Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our <a href="">privacy policy</a>.</p>
+
+          <label class="terms">
+            <input type="checkbox" required /> I have read and agree to the website <a href="#">terms and conditions</a> *
+          </label>
+
+          <button class="place-order">PLACE ORDER</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+   <footer class="main-footer">
+    <div class="footer-info">
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Booking and Refund Policy</a>
+        <a href="#">Terms and Conditions</a>
+      </div>
+      <div class="footer-address">
+        <strong>Location and Opening Hours:</strong><br/>
+        512 Swanston St, Carlton 3053<br/>
+        Opening hours may vary. Check our calendar for available sessions and hours.<br/>
+        (We reserve the right to close early if there are no bookings or cats require medical care)
+      </div>
+      <div class="social-icons">
+        <a href="#"><img src="Footer/facebook.png" alt="Facebook" /></a>
+        <a href="#"><img src="Footer/instagram.png" alt="Instagram" /></a>
+        <a href="#"><img src="Footer/pintrest.png" alt="Pinterest" /></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
