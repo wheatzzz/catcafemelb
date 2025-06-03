@@ -282,7 +282,7 @@
 
 </div>
 
-<div class="button-container">
+<div class="button-container"> 
   <button id="book-now-btn" class="book-now-btn">BOOK NOW</button>
 </div>
 
@@ -416,16 +416,12 @@
     }
 
     document.getElementById('book-now-btn').addEventListener('click', function(e) {
-  // Prevent default navigation for now
   e.preventDefault();
 
-  // Get selected date and timeslot
   const selectedDate = selectedDateCell ? parseInt(selectedDateCell.textContent) : null;
   const selectedTime = selectedTimeslot ? selectedTimeslot.textContent.trim() : null;
 
-  // Get all pass quantities
   const passes = document.querySelectorAll('.booking-pass');
-  // Map title to quantity
   let quantities = {};
   passes.forEach(pass => {
     const title = pass.querySelector('.title').textContent.trim();
@@ -434,34 +430,41 @@
     quantities[title] = qty;
   });
 
-  // Define the two required passes titles exactly as in HTML
   const pass1 = "1h Pass + Hot Coffee/Chocolate/Tea";
   const pass2 = "1h Pass + Complimentary Drink";
 
-  // Check conditions
   const conditionDate = selectedDate === 12;
   const conditionTime = selectedTime === "12:00pm";
-
   const conditionPass1 = quantities[pass1] === 1;
   const conditionPass2 = quantities[pass2] === 1;
 
-  // Check no other passes selected (all others zero)
-  let otherPassesSelected = false;
-  for (const [title, qty] of Object.entries(quantities)) {
-    if (title !== pass1 && title !== pass2 && qty > 0) {
-      otherPassesSelected = true;
-      break;
-    }
-  }
+  // Check no other passes selected
+  const otherPassesSelected = Object.entries(quantities).some(([title, qty]) => {
+    return title !== pass1 && title !== pass2 && qty > 0;
+  });
+
+  // DEBUGGING
+  console.log({selectedDate, selectedTime, quantities, otherPassesSelected});
 
   if (conditionDate && conditionTime && conditionPass1 && conditionPass2 && !otherPassesSelected) {
-    // Conditions satisfied, allow navigation to cart page
+    // Set cart status and go to cart page
+    localStorage.setItem("cartStatus", "notEmpty");
     window.location.href = 'cart.html';
   } else {
     alert("Sorry, the product is unavailable.\n\nYou must book exactly 1 x '1h Pass + Hot Coffee/Chocolate/Tea' and 1 x '1h Pass + Complimentary Drink' for the 12th at 12:00pm only.");
   }
 });
 
+
+ document.addEventListener("DOMContentLoaded", () => {
+    const bookNowBtn = document.getElementById("book-now-btn");
+    if (bookNowBtn) {
+      bookNowBtn.addEventListener("click", () => {
+        localStorage.setItem("cartStatus", "notEmpty");
+        window.location.href = "cart.html";
+      });
+    }
+  });
   </script>
   
 </body>

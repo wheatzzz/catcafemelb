@@ -154,6 +154,7 @@ textarea {
 }
 
 .place-order {
+  display: inline-block;       /* anchors are inline by default, this allows padding and width */
   background-color: #027D42;
   color: white;
   padding: 12px;
@@ -163,12 +164,18 @@ textarea {
   cursor: pointer;
   font-weight: bold;
   font-family: 'Roboto', sans-serif;
-  width: 100%;
+  width: 100%;                 /* if you want full width, keep this */
+  text-align: center;          /* center text inside the anchor */
+  text-decoration: none;       /* remove underline */
+  box-sizing: border-box;      /* for consistent padding/width */
+  user-select: none;           /* optional: prevent text highlight on click */
 }
 
 .place-order:hover {
   background-color: #026a38;
+  text-decoration: none;       /* keep no underline on hover */
 }
+
 
 .card-placeholder {
   background: #8C4F2F;

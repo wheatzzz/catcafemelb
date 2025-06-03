@@ -77,12 +77,8 @@ document.querySelector('.place-order').addEventListener('click', function (e) {
   const requiredGroups = document.querySelectorAll('.billing-details .form-group[data-required="true"]');
   let billingIncomplete = false;
 
-  // Loop over each form group
   for (let group of requiredGroups) {
-    // Find the input or select inside this group
     const input = group.querySelector('input, select, textarea');
-
-    // If input is missing or empty, mark incomplete
     if (!input || !input.value.trim()) {
       billingIncomplete = true;
       break;
@@ -94,7 +90,7 @@ document.querySelector('.place-order').addEventListener('click', function (e) {
     return;
   }
 
-  // Continue with card validation as before:
+  // Card validations
   const cardNumber = document.querySelector('.card-placeholder input[placeholder="Card Number"]');
   const expiry = document.querySelector('.card-placeholder input[placeholder="MM/YY"]');
   const cvc = document.querySelector('.card-placeholder input[placeholder="CVC"]');
@@ -127,7 +123,9 @@ document.querySelector('.place-order').addEventListener('click', function (e) {
     return;
   }
 
-  alert('Order placed successfully!');
+  // All validations passed: clear cart and redirect
+  localStorage.setItem('cartStatus', 'empty');  // Mark cart as empty
+  localStorage.removeItem('cart');              // Optional: clear cart data if stored under 'cart'
+  
+  window.location.href = 'finalisedbooking.html';
 });
-
-
