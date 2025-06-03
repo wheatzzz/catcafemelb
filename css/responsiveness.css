@@ -254,3 +254,84 @@
   }
 }
 
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .right-column {
+    align-items: center;
+    text-align: center;
+  }
+
+  .btn-home {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (max-width: 768px) {
+  /* Hide cart header on mobile */
+  .cart-header {
+    display: none;
+  }
+
+  /* Stack product layout in column */
+  .cart-product {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  
+
+  /* Ensure image stays left-aligned */
+  .cart-product img {
+    margin-right: 0;
+  }
+
+  /* Full width product details */
+  .cart-product-details {
+    flex-basis: 100%;
+    width: 100%;
+  }
+
+  /* Stack price/qty/subtotal vertically */
+  .cart-product-price,
+  .cart-product-quantity,
+  .cart-product-subtotal {
+    width: 100%;
+    text-align: left;
+    padding: 0;
+  }
+
+  /* Label each field with a title */
+  .cart-product-price::before {
+    content: "Price: ";
+    font-weight: bold;
+    color: #777;
+    margin-right: 0.25rem;
+  }
+
+  .cart-product-quantity::before {
+    content: "Quantity: ";
+    font-weight: bold;
+    color: #777;
+    margin-right: 0.25rem;
+  }
+
+  .cart-product-subtotal::before {
+    content: "Subtotal: ";
+    font-weight: bold;
+    color: #777;
+    margin-right: 0.25rem;
+  }
+
+  /* More space between totals and recommendations */
+  .cart-totals {
+    margin-bottom: 2rem;
+  }
+
+  .recommendations {
+    margin-top: 3rem;
+  }
+}
