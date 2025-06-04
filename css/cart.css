@@ -156,7 +156,7 @@
 .cart-product-quantity,
 .cart-product-subtotal {
   flex-basis: 13%;
-  text-align: right;
+  text-align: center;
   font-weight: bold;
   color: #333;
   margin: 0;
